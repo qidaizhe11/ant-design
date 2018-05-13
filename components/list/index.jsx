@@ -103,6 +103,7 @@ export default {
       footer,
       loading,
       locale,
+      ...rest
     } = this.$props
     const children = filterEmpty($slots.default)
 
@@ -193,7 +194,7 @@ export default {
     const loadMoreDom = loadMore || getComponentFromProp(this, 'loadMore')
 
     return (
-      <div class={classString}>
+      <div class={classString} {...rest}>
         {headerDom && <div class={`${prefixCls}-header`}>{headerDom}</div>}
         {children}
         {footerDom && <div className={`${prefixCls}-footer`}>{footerDom}</div>}
