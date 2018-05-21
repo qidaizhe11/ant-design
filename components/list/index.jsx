@@ -11,7 +11,31 @@ import defaultLocale from '../locale-provider/default'
 
 import Pagination from '../pagination'
 
-export const listProps = {
+export const ColumnCount = PropTypes.oneOf([1, 2, 3, 4, 6, 8, 12, 24])
+
+export const ColumnType = PropTypes.oneOf([
+  'gutter',
+  'column',
+  'xs',
+  'sm',
+  'md',
+  'lg',
+  'xl',
+  'xxl',
+])
+
+export const ListGridType = {
+  gutter: PropTypes.number,
+  column: ColumnCount,
+  xs: ColumnCount,
+  sm: ColumnCount,
+  md: ColumnCount,
+  lg: ColumnCount,
+  xl: ColumnCount,
+  xxl: ColumnCount,
+}
+
+export const ListProps = {
   prefixCls: PropTypes.string,
   bordered: PropTypes.string,
   dataSource: PropTypes.any,
@@ -35,7 +59,7 @@ export default {
     }
   },
   mixins: [BaseMixin],
-  props: initDefaultProps(listProps(), {
+  props: initDefaultProps(ListProps, {
     dataSource: [],
     prefixCls: 'ant-list',
     bordered: false,

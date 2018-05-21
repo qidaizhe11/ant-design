@@ -1,6 +1,12 @@
 import PropTypes from '../_util/vue-types'
 import { getComponentFromProp } from '../_util/props-util'
 
+export const ListItemMetaProps = {
+  prefixCls: PropTypes.string,
+  title: PropTypes.string,
+  description: PropTypes.string,
+}
+
 export default {
   name: 'AListItemMeta',
   props: {
